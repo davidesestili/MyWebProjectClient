@@ -69,7 +69,14 @@ valid = false;
 <TR>
 <TD COLSPAN="1" ALIGN="LEFT">algorithm:</TD>
 <TD ALIGN="left">
-	<INPUT TYPE="TEXT" NAME="algorithm20" SIZE=20>
+	<select name="algorithm20">
+		<option>MD2</option>
+		<option>MD5</option>
+		<option selected="selected">SHA-1</option>
+		<option>SHA-256</option>
+		<option>SHA-384</option>
+		<option>SHA-512</option>
+	</select>
 </TD>
 </TR>
 </TABLE>
@@ -77,7 +84,11 @@ valid = false;
 <TR>
 <TD COLSPAN="1" ALIGN="LEFT">mode:</TD>
 <TD ALIGN="left">
-	<INPUT TYPE="TEXT" NAME="mode22" SIZE=20>
+	<select name="mode22">
+		<option selected="selected" value="not-recursive">Non ricorsivo</option>
+		<option value="recursive">Ricorsivo</option>
+		<option value="no-subfolders">Senza sottocartelle</option>
+	</select>
 </TD>
 </TR>
 </TABLE>
