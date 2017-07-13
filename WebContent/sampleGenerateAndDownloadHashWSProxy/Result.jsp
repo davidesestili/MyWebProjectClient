@@ -85,26 +85,33 @@ if(generateAndDownloadHash13mtemp == null){
 <%
 }else{
 %>
-<TABLE>
-<TR>
-<TD COLSPAN="3" ALIGN="LEFT">returnp:</TD>
-<TR>
-<TD WIDTH="5%"></TD>
-<TD COLSPAN="2" ALIGN="LEFT">result:</TD>
-<TD>
+<style>
+	table, th, td {
+	    border: 1px solid black;
+	}
+</style>
+<TABLE border="1">
+ <thead>
+  <tr>
+     <th>hash</th>
+     <th>file name</th>
+  </tr>
+ </thead>
 <%
 if(generateAndDownloadHash13mtemp != null){
 it.dsestili.mywebproject.ws.FileInfo[] typeresult16 = generateAndDownloadHash13mtemp.getResult();
-        String tempresult16 = null;
         if(typeresult16 != null){
-        java.util.List listresult16= java.util.Arrays.asList(typeresult16);
-        tempresult16 = listresult16.toString();
+			for(it.dsestili.mywebproject.ws.FileInfo fi : typeresult16)
+			{
+			%>
+				<TR>
+					<td><%=fi.getHash() %></td>
+					<td><%=fi.getFileName() %></td>
+				<TR>
+			<%
+			}
         }
-        %>
-        <%=tempresult16%>
-        <%
 }%>
-</TD>
 </TABLE>
 <%
 }
